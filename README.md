@@ -47,7 +47,7 @@ npm start
 
 ## Screenshots
 
-<img src="screenshots/screenshot.jpg" />
+<img src="screenshots/screenshot.png" />
 
 ## Built With
 
