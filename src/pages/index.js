@@ -1,53 +1,46 @@
 import React, { useState } from "react";
-import { getUser, getRepoByUser } from "../_action/axios";
+import { getData } from "../_action/axios";
 import RepoList from "./repo-list";
 import User from "./user";
 
 const App = () => {
   const [value, setValue] = useState("");
   const [data, setData] = useState("");
-  const [user, setUser] = useState("");
-  console.log(user);
+  console.log(data);
   return (
-    <div className="grid-container">
-      <div className="grid-item header">
-        <label>Git Hooker get repository info by username</label>
-      </div>
-      <div className="grid-item content">
-        <User data={user} />
-      </div>
-      <div className="grid-item detail">
-        <form
-          onSubmit={async (event) => {
-            event.preventDefault();
-            const resRepo = await getRepoByUser(value);
-            setData(resRepo);
-            const resUser = await getUser(value);
-            setUser(resUser);
-          }}
-        >
-          <input
-            type="text"
-            name="user"
-            placeholder="GIT Username"
-            autoComplete="off"
-            onChange={(event) => {
-              setValue(event.target.value);
+    <>
+      <div className="header">REPOGIT</div>
+      <div className="container">
+        <div className="row card">
+          <form
+            onSubmit={async event => {
+              event.preventDefault();
+              const data = await getData(value);
+              setData(data);
             }}
-          />
-
-          <button className="primary" type="submit">
-            Search
-          </button>
-        </form>
-        <hr />
-        <RepoList data={data} />
+          >
+            <div className="col col-3">
+              <input
+                type="text"
+                name="user"
+                placeholder="GIT Username"
+                autoComplete="off"
+                onChange={event => {
+                  setValue(event.target.value);
+                }}
+              />
+            </div>
+            <div className="col col-1">
+              <button className="primary" type="submit">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+        <User data={data.user} />
+        <RepoList data={data.repos} />
       </div>
-      <div className="grid-item about">
-        Git Hooker is application for retrieve the list of all GitHub
-        repositories of a person. <hr /> Made by Ahmad Khairul with React JS
-      </div>
-    </div>
+    </>
   );
 };
 

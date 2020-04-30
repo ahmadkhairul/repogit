@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  padding: 1% 1%;
+  width: 100%;
+
+  background-color: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+}
+
+.container {
+  padding: 0% 10%;
+
+  width: 100%;
+}
+
+/* Font */
+a {
+  text-decoration: none;
+}
+
+p {
+  color: #586069;
+}
+
+h1 {
+  font-size: 26px;
+  padding: 0px 0px 5px 0px;
+  margin: 0px 0px 5px 0px;
+}
+
+h2 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  color: #666;
+  padding: 0px 0px 5px 0px;
+  margin: 0px 0px 5px 0px;
+}
+
+h3 {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* Button */
+
+.primary {
+  background-color: #28a745;
+  background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
+  border: 1px solid #00ff00;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px 10px;
+
+  height: 29px;
+}
+.primary:hover {
+  background-color: #0000ff;
+  color: #ffffff;
+}
+.primary:active {
+  position: relative;
+  top: 1px;
+}
+
+/* Form */
+
+form input[type="text"] {
+  background-color: #ffffff;
+  border-radius: 1px;
+  border: 1px solid gray;
+  width: 100%;
+  height: 28px;
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+.profile {
+  width: 100%;
+  height: 100%;
+}
+
+/* GRID */
+.red {
+  background-color: red;
+}
+
+.card {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+
+  height: 100%;
+  width: 100%;
+  margin: 5px;
+  padding: 1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.row {
+  padding-top: 0.5em;
+  padding-right: 0.5em;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding-left: 0.5em;
+}
+
+.col-1 {
+  width: 25%;
+}
+.col-2 {
+  width: 50%;
+}
+.col-3 {
+  width: 75%;
+}
+.col-4 {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* For tablets: */
+
+  .col-s-1 {
+    width: 50%;
+  }
+  .col-s-2 {
+    width: 100%;
+  }
+}

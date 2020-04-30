@@ -1,21 +1,18 @@
 import axios from "axios";
 
-export const getUser = async (value) => {
+export const getData = async value => {
   try {
-    const res = await axios.get("https://api.github.com/users/" + value);
-    return res.data;
-  } catch (err) {
-    return err;
-  }
-};
-
-export const getRepoByUser = async (value) => {
-  try {
-    const res = await axios.get(
+    const user = await axios.get("https://api.github.com/users/" + value);
+    const repos = await axios.get(
       "https://api.github.com/users/" + value + "/repos"
     );
-    return res.data;
+    let data = {
+      user: user.data,
+      repos: repos.data
+    };
+    return data;
   } catch (err) {
+    console.log(err);
     return err;
   }
 };
